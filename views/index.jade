@@ -11,24 +11,38 @@ mixin photo(file, caption, alt)
     .caption
       p=caption
 
+
+mixin image(file, caption, alt)
+  .photo
+    img(
+      sizes="(min-width: 1000px) 930px, 90vw"
+      data-sizes="auto"
+      data-src="img/photos/320/"+file
+      data-srcset="img/photos/320/"+file+" 320w, img/photos/640/"+file+" 500w, img/photos/1280/"+file+" 640w, img/photos/1920/"+file+" 1024w"
+      class="lazyload no-src"
+      alt=alt
+      )
+    .caption
+      p=caption
+
 block content
   #logo  
     p Iain Maitland
     p 3136139172 @iainmaitland
 
   #photos
-    +photo('the_boys_in_inkster_iain_maitland_2016.png', 'The boys in Inkster.', 'inkster detroit')
-    +photo('j_detroit_2014_iain_maitland.png', 'J on top of a building.', 'shadow detroit')
-    +photo('national_theater_detroit_2012_iain_maitland.png', 'National Theater, Downtown Detroit.', 'National Theater Detroit Downtown')
-    +photo('shaved_head_detroit_2011_iain_maitland.png', 'After getting head shaved, Detroit.', 'shaved head')
-    +photo('chinese_restaurant_detroit_iain_maitland_2016.png', 'Old Chinese restaurant.', 'chinese restauraunt')
-    +photo('ashley_outside_motel_2016_iain_maitland.png', 'Ashley waiting for Johns outside the Fontaine Motel on Woodward.', 'motel woodward trans')
-    +photo('ashley_with_john_2016_iain_maitland.png', 'Ashley with a John at the Motel on Woodward.', 'motel woodward trans')
-    +photo('ashley_voguing_2016_iain_maitland.png', 'Ashley voguing in the street.', 'voguing detroit trans')
-    +photo('house_fire_2013_iain_maitland.png', 'A housefire in South West Detroit seen from the Renaissance Center.', 'fire detroit renaissance center')
-    +photo('ant_with_dead_swan_detroit_2015_iain_maitland.png', 'Ant with a Dead Swan on Belle Isle.', 'belle isle dead swan detroit')
-    +photo('9mm_lorcin_in_the_trash_detroit_2016_iain_maitland.JPG', 'A Lorcin 9mm pistol found in the trash.', 'Lorcin 9mm Detroit')
-    +photo('marijuana_plant_detroit_2013_iain_maitland.png', 'A marijuna plant found in a vacant lot.', 'marijuana detroit')
-    +photo('abandoned_school_detroit_2015_iain_maitland.png', 'An abandoned school.', 'abandoned school detroit')
+    +image('the_boys_in_inkster_iain_maitland_2016.png', 'The boys in Inkster.', 'inkster detroit')
+    +image('j_detroit_2014_iain_maitland.png', 'J on top of a building.', 'shadow detroit')
+    +image('national_theater_detroit_2012_iain_maitland.png', 'National Theater, Downtown Detroit.', 'National Theater Detroit Downtown')
+    +image('shaved_head_detroit_2011_iain_maitland.png', 'After getting head shaved, Detroit.', 'shaved head')
+    +image('chinese_restaurant_detroit_iain_maitland_2016.png', 'Old Chinese restaurant.', 'chinese restauraunt')
+    +image('ashley_outside_motel_2016_iain_maitland.png', 'Ashley waiting for Johns outside the Fontaine Motel on Woodward.', 'motel woodward trans')
+    +image('ashley_with_john_2016_iain_maitland.png', 'Ashley with a John at the Motel on Woodward.', 'motel woodward trans')
+    +image('ashley_voguing_2016_iain_maitland.png', 'Ashley voguing in the street.', 'voguing detroit trans')
+    +image('house_fire_2013_iain_maitland.png', 'A housefire in South West Detroit seen from the Renaissance Center.', 'fire detroit renaissance center')
+    +image('ant_with_dead_swan_detroit_2015_iain_maitland.png', 'Ant with a Dead Swan on Belle Isle.', 'belle isle dead swan detroit')
+    +image('9mm_lorcin_in_the_trash_detroit_2016_iain_maitland.JPG', 'A Lorcin 9mm pistol found in the trash.', 'Lorcin 9mm Detroit')
+    +image('marijuana_plant_detroit_2013_iain_maitland.png', 'A marijuna plant found in a vacant lot.', 'marijuana detroit')
+    +image('abandoned_school_detroit_2015_iain_maitland.png', 'An abandoned school.', 'abandoned school detroit')
 
   #footer
