@@ -1,17 +1,5 @@
 extends layout
 
-mixin photo(file, caption, alt)
-  .photo 
-    picture
-      source(media="(min-width: 1920px)" srcset="img/photos/1920/"+file)
-      source(media="(min-width: 1280px)" srcset="img/photos/1280/"+file+" 1x, img/photos/1920/" +file+" 2x" )
-      source(media="(min-width: 640px)" srcset="img/photos/640/"+file+" 1x, img/photos/1280/" +file+" 2x" )
-      source(media="(min-width: 320px)" srcset="img/photos/320/"+file+" 1x, img/photos/640/" +file+" 2x" )
-      img(class="lazyload" src="img/photos/640/" +file alt=alt)
-    .caption
-      p=caption
-
-
 mixin image(file, caption, alt)
   .photo
     img(
