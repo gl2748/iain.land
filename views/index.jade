@@ -15,7 +15,6 @@ mixin photo(file, caption, alt)
 mixin image(file, caption, alt)
   .photo
     img(
-      sizes="(max-width: 40em) 100vw, 50vw"  
       data-sizes="auto"
       data-src="img/photos/320/"+file
       data-srcset="img/photos/320/"+file+" 0.4x, img/photos/640/"+file+" 0.8x, img/photos/1280/"+file+" 1.2x, img/photos/1920/"+file+" 1.6x"
