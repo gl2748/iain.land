@@ -15,8 +15,6 @@ mixin photo(file, caption, alt)
 mixin image(file, caption, alt)
   .photo
     img(
-        sizes="(min-width: 40em) 90vw, 100vw" 
-
       sizes="(min-width: 1600px) 1920px,(min-width: 1280px) calc(100vw - 100px),(min-width: 640px) calc(100vw - 25px),100vw"
       data-sizes="auto"
       data-src="img/photos/1280/"+file
