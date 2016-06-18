@@ -16,8 +16,8 @@ mixin image(file, caption, alt)
   .photo
     img(
       data-sizes="auto"
-      data-src="img/photos/320/"+file
-      data-srcset="img/photos/320/"+file+" 300w, img/photos/640/"+file+" 640w, img/photos/1280/"+file+" 1280w, img/photos/1920/"+file+" 1920w"
+      data-src="img/photos/1280/"+file
+      data-srcset="img/photos/320/"+file+" 320w, img/photos/640/"+file+" 640w, img/photos/1280/"+file+" 1280w, img/photos/1920/"+file+" 1920w"
       class="lazyload no-src"
       alt=alt
       )
