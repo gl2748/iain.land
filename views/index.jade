@@ -14,18 +14,20 @@ mixin image(file, caption, alt)
       p=caption
 
 block content
-  #logo 
-      
+  #logo   
     p / /\ / /\/.
-    p 
-      a( 
-        href="https://www.instagram.com/iainmaitland/?ref=badge"
-        class="ig-b- ig-b-24"
-        )
-        img(
-          src="//badges.instagram.com/static/images/ig-badge-24.png"
-          alt="Iain Maitland Instagram"
-          )
+
+  ul.links
+    li
+      a(href="/films")
+        .icon
+        .text
+          p films.
+    li
+      a(href="https://www.instagram.com/iainmaitland/?ref=badge" target="_blank")
+        .icon
+        .text
+           p about.
 
   #photos
     +image('the_boys_in_inkster_iain_maitland_2016.png', 'The boys in Inkster.', 'inkster detroit')
