@@ -14,21 +14,6 @@ mixin image(file, caption, alt)
       p=caption
 
 block content
-  #logo   
-    p / /\ / /\/.
-
-  ul.links
-    li
-      a(href="/films")
-        .icon
-        .text
-          p films.
-    li
-      a(href="https://www.instagram.com/iainmaitland/?ref=badge" target="_blank")
-        .icon
-        .text
-           p about.
-
   #photos
     +image('the_boys_in_inkster_iain_maitland_2016.png', 'The boys in Inkster.', 'inkster detroit')
     +image('house_fire_2013_iain_maitland.png', 'A housefire in South West Detroit seen from the Renaissance Center.', 'fire detroit renaissance center')

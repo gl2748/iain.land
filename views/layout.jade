@@ -12,6 +12,21 @@ html
     != css()
 
   body
-    block content
 
-    != js()
+  .logobox
+    span
+      .logo
+        span / /\ / /\/
+
+      .links
+        a(href="/index")
+          span Photos 
+        span & 
+        a(href="/films")
+          span Films  
+        a(href="https://www.instagram.com/iainmaitland/?ref=badge" target="_blank")
+
+  block nav
+  block content
+
+  != js()
