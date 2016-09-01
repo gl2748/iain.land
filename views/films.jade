@@ -1,4 +1,4 @@
-extends layout
+extends infobox
 
 mixin image(file, caption, alt)
   .photo
@@ -13,10 +13,25 @@ mixin image(file, caption, alt)
     .caption
       p=caption
 
-block content
+block photos
   #photos
     +image('trinidad_detroit_2015_iain_maitland.png', '', 'scrapping detroit')
     .caption
       a(href="http://nobudge.com/main/trinidad")
         p Trinidad, 32mins, HD, 2015.
+
+    iframe(
+      src="https://player.vimeo.com/video/40875161?portrait=0"
+      width="640"
+      height="360"
+      frameborder="0"
+      webkitallowfullscreen
+      mozallowfullscreen
+      allowfullscreen
+    )
+
+  #vimeo
+
+
+
   #footer

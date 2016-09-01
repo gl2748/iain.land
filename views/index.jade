@@ -1,7 +1,7 @@
-extends layout
+extends infobox
 
 mixin image(file, caption, alt)
-  .photo
+  photograph
     img(
       sizes="(min-width: 36em) 90.0vw, 100vw"
       data-src="img/photos/1280/"+file
@@ -10,10 +10,11 @@ mixin image(file, caption, alt)
       alt=alt
       src="img/photos/640/"+file
       )
-    .caption
+    description
       p=caption
 
-block content
+block photos
+
   #photos
     +image('the_boys_in_inkster_iain_maitland_2016.png', 'Kids in Inkster.', 'inkster detroit')
     +image('house_fire_2013_iain_maitland.png', 'A housefire in South West Detroit seen from the Renaissance Center.', 'fire detroit renaissance center')

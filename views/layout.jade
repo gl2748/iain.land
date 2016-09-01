@@ -9,26 +9,40 @@ html
     //- uncomment if your site is responsive!
     meta(name="viewport" content="width=device-width, initial-scale=1")
     title= "Iain Maitland Photos and Films"
-    != css()
+    != css('/')
 
   body
+    
+    logobox
 
-  .logobox
-    span
-      .logo
-        span / /\ / /\/
+      logo
+       p  / /\ / /\/
 
-      .links
-        a(href="/index")
-          span Photos 
-        a(href="/films")
-          span Films  
- 
-  .infobox
-    .text
-      :markdown
-        Iain Maitland is a photographer in Detroit. Clients include: National Geographic, Vice, Viceland, 538, BBC, MetroTimes and Mother Jones. You can find him on [instagram](https://instagram.com/iainmaitland) or email iain@iainmait.land.
-  block nav
-  block content
+      navbar
+        navlink
+          a(href="/index") Photos 
+        navlink 
+          a(href="/films") Films
+        navlink
+          a(href="/blog") Blog
+
+    block infobox
+
+    block photos
+
+    block blogpost
+
+    logobox
+
+      navbar
+        navlink
+          a(href="/index") Photos 
+        navlink 
+          a(href="/films") Films
+        navlink
+          a(href="/blog") Blog
+
+      logo
+       p  / /\ / /\/
 
   != js()

@@ -1,0 +1,27 @@
+logobox
+  center();
+  text-align: center;
+
+  logo
+    fs: 1rem
+    color: navy
+
+  navbar
+    center(20%)
+
+    navlink
+
+      span(1/3)    
+
+      a
+        link: green 'darken'
+
+  @media screen and (max-width:768px) and (min-width:481px)
+    navbar
+      center(40%)
+
+
+  @media screen and (max-width:480px)
+    navbar
+      center(80%)
+
