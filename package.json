@@ -8,7 +8,7 @@
     "css-pipeline": "0.2.x",
     "dynamic-content": "^0.3.0",
     "jade": "1.x",
-    "jeet": "3.10.6",
+    "jeet": "6.1.1",
     "js-pipeline": "0.2.x",
     "marked": "0.3.x",
     "roots": "^3.0.0",
