@@ -1,37 +1,25 @@
 extends infobox
 
-mixin image(file, caption, alt)
-  .photo
-    img(
-      sizes="(min-width: 36em) 90.0vw, 100vw"
-      data-src="img/photos/1280/"+file
-      data-srcset="img/photos/320/"+file+" 320w, img/photos/640/"+file+" 640w, img/photos/1280/"+file+" 1280w, img/photos/1920/"+file+" 1920w"
-      class="lazyload"
-      alt=alt
-      src="img/photos/640/"+file
-      )
+mixin vimeo(vimeourl, caption)
+  vimeo
+    .vimeo-container
+      iframe(
+        src=vimeourl
+        width="640"
+        height="360"
+        frameborder="0"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen
+        )
     .caption
       p=caption
+    
 
 block photos
   #photos
-    +image('trinidad_detroit_2015_iain_maitland.png', '', 'scrapping detroit')
-    .caption
-      a(href="http://nobudge.com/main/trinidad")
-        p Trinidad, 32mins, HD, 2015.
-
-    iframe(
-      src="https://player.vimeo.com/video/40875161?portrait=0"
-      width="640"
-      height="360"
-      frameborder="0"
-      webkitallowfullscreen
-      mozallowfullscreen
-      allowfullscreen
-    )
-
-  #vimeo
-
-
-
-  #footer
+    +vimeo('https://player.vimeo.com/video/126847632?portrait=0', 'Hello World')
+    +vimeo('https://player.vimeo.com/video/40875161?portrait=0', 'Hello World')
+    +vimeo('https://player.vimeo.com/video/32875713?portrait=0', 'Hello World')
+    +vimeo('https://player.vimeo.com/video/35889749?portrait=0', 'Hello World')
+    +vimeo('https://player.vimeo.com/video/36625574?portrait=0', 'Hello World')
