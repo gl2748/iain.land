@@ -1,0 +1,34 @@
+---
+title: 'Paintings - 1'
+date: 20/05/2015
+_content: false
+_render: true
+---
+extends ../views/post_layout
+
+mixin image(file, caption, alt)
+  photograph
+    img(
+      sizes="(min-width: 36em) 90.0vw, 100vw"
+      data-src="/img/photos/1280/paintings/"+file
+      data-srcset="/img/photos/320/paintings/"+file+" 320w, /img/photos/640/paintings/"+file+" 640w, /img/photos/1280/paintings/"+file+" 1920w,"
+      class="lazyload"
+      alt=alt
+      src="/img/photos/640/paintings/"+file
+      )
+    description
+      p=caption
+
+block blogpost
+
+  +image('dracula_2013_iain_maitland.png', 'Dracula.', 'painting detroit graffiti')
+  +image('flow_2014_iain_maitland.jpg', 'Next to Paid.', 'painting detroit graffiti')
+  +image('gorilla_pod_2014_iain_maitland.png', 'Gorilla Pod.', 'painting detroit graffiti')
+  +image('trucker_2014_iain_maitland.jpg', 'Trucker.', 'painting detroit graffiti')
+  +image('varney_head_2015_iain_maitland.jpg', 'Varney Head.', 'painting detroit graffiti')
+  +image('woodward_man_2015_iain_maitland.png', 'Woodward Man.', 'painting detroit graffiti')
+  +image('pylon_2014_iain_maitland.png', 'Pylon.', 'iain maitland painting detroit graffiti')
+  +image('bearded_man_2015_iain_maitland.png', 'Recycle Center.', 'painting detroit graffiti')
+  +image('woodsman_2014_iain_maitland.png', 'Naked Man.', 'painting detroit graffiti')
+  +image('baltimore_2015_iain_maitland.png', 'Baltimore.', 'painting detroit graffiti')
+  +image('6_mile_2015_iain_maitland.jpg', 'Near where I live.', 'painting detroit graffiti')
