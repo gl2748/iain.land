@@ -14,7 +14,8 @@ mixin vimeo(vimeourl, caption, reviewurl, reviewlinktext)
         )
     .caption
       p=caption
-      a(href=reviewurl)=reviewlinktext
+      p
+        a(href=reviewurl)=reviewlinktext
     
 
 block photos
