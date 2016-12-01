@@ -1,7 +1,8 @@
 extends layout
 
 block photos
-  each post in site.posts.all()
+
+  each post, index in site.posts.sort().reverse()
     blogpost
       a.post
         p: a(href=post._url)= post.title
