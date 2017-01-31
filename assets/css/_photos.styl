@@ -3,7 +3,6 @@ photograph
 
   img
     center(100%)
-    
 
 .blur-up {
   -webkit-filter: blur(5px);
@@ -14,9 +13,14 @@ photograph
 .blur-up.lazyloaded {
   -webkit-filter: blur(0);
   filter: blur(0);
-} 
+}
 
 description
   p
     blockquote()
-    margin-left: 5%;
+
+    +above(575px)
+      margin-left: 5%;
+
+    +above(1600px)
+      margin-left: 0;
