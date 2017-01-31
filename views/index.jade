@@ -4,8 +4,8 @@ mixin image(file, caption, alt)
   photograph
     img(
       sizes="(min-width: 36em) 90.0vw, 100vw"
-      data-src="img/photos/1280/"+file
-      data-srcset="img/photos/320/"+file+" 320w, img/photos/640/"+file+" 640w, img/photos/1280/"+file+" 1280w, img/photos/1280/"+file+" 1280w"
+      data-src="img/photos/320/"+file
+      data-srcset="img/photos/320/"+file+" 320w, img/photos/640/"+file+" 640w, img/photos/640/"+file+" 1280w, img/photos/1280/"+file+" 1920w"
       class="lazyload blur-up"
       alt=alt
       src="img/photos/320/"+file
