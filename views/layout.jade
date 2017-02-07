@@ -7,7 +7,9 @@ html
     meta(name='description', content='Iain Maitland Films and Photographs')
     meta(name='author', content= "Iain Maitland")
     //- uncomment if your site is responsive!
-    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    meta(name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0")
+
     title= "Iain Maitland Photos and Films"
     != css('/')
 
@@ -31,5 +33,9 @@ html
     block photos
 
     block blogpost
+
+    block threedpost
+
+    block threedposttext
 
   != js('/')
