@@ -36,7 +36,7 @@ function init() {
 
   // Add the renderer.
   renderer = new THREE.WebGLRenderer( { antialias: false } );
-  renderer.setClearColor( 0xa0a0a0 );
+  renderer.setClearColor( 0xffffff );
   renderer.setPixelRatio( window.devicePixelRatio );
 
   // Set up the ShadowMap.
@@ -111,7 +111,7 @@ function onWindowResize() {
 function createScene1( geometry, materials ) {
   // Ground.
   var myPlane = new THREE.PlaneBufferGeometry( 100, 100 );
-  var planeMaterial = new THREE.MeshPhongMaterial( { color: 0xffdd99 } );
+  var planeMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } );
   var ground = new THREE.Mesh( myPlane, planeMaterial );
   ground.position.set( 0, -150, 0 );
   ground.rotation.x = - Math.PI / 2;
