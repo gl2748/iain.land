@@ -92,7 +92,7 @@ function init() {
   var loader = new THREE.JSONLoader();
   loader.load(
     // resource URL
-    "../../3d/vrbaby.json",
+    "../../3d/vrbaby2.json",
     // Function when resource is loaded
     createScene1
   );
