@@ -60,7 +60,7 @@ function init() {
   // Place camera on y axis
   camera.position.set(0,0,0);
   camera.position.z = 600;
-  camera.position.y = 340;
+  camera.position.y = 70;
   //camera.up = new THREE.Vector3(0,0,1);
   camera.lookAt(new THREE.Vector3(0,0,0));
 
@@ -75,10 +75,10 @@ function init() {
   controls.autoRotate = true;
   controls.autoRotateSpeed = 0.1;
   controls.enableZoom = false;
-  controls.minPolarAngle = Math.PI/4; // radians
 
-  //controls.maxPolarAngle = Math.PI; // radia
-  controls.maxPolarAngle = Math.PI/2.2;
+  //Constrain the orbit controls.
+  controls.minPolarAngle = Math.PI/5; // Radians.
+  controls.maxPolarAngle = Math.PI/2.25; // Radians.
 
   // Lights.
   var ambient = new THREE.AmbientLight( 0x404040, 3.2 ); // soft white light
@@ -109,7 +109,7 @@ function init() {
     createScene2
   );
 
-   // Flies
+  // Flies.
   var sphere = new THREE.SphereGeometry( 2, 4, 4 );
   light1 = new THREE.PointLight( 0x222222, 2, 50 );
   light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0x222222 } ) ) );
@@ -140,6 +140,7 @@ function createScene1( geometry, materials ) {
   ground.receiveShadow = true;
   scene.add( ground );
 
+  //Add model of Baby, headset, cable and PC.
   materials[ 0 ].shading = THREE.SmoothShading;
   mesh = new THREE.Mesh( geometry, new THREE.MultiMaterial( materials ));
   mesh.position.set( 0, -150, 0 );
@@ -165,6 +166,7 @@ function animate() {
 
   var time = Date.now() * 0.003;
 
+  // Update the flies position
   light1.position.x = 200 + Math.sin( time * 0.7 ) * 30 + osc*Math.random();
   light1.position.y = Math.cos( time * 0.5 ) * 40 + osc*Math.random();
   light1.position.z = Math.cos( time * 0.3 ) * 30;
