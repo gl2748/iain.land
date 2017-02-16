@@ -27,6 +27,11 @@ var lightShadowMapViewer;
 var clock = new THREE.Clock();
 var showHUD = false;
 
+// Flies
+var light1;
+var clock = new THREE.Clock();
+var osc = 2;
+
 init();
 animate();
 
@@ -73,7 +78,7 @@ function init() {
   controls.minPolarAngle = Math.PI/4; // radians
 
   //controls.maxPolarAngle = Math.PI; // radia
-  controls.maxPolarAngle = Math.PI/3;
+  controls.maxPolarAngle = Math.PI/2.2;
 
   // Lights.
   var ambient = new THREE.AmbientLight( 0x404040, 3.2 ); // soft white light
@@ -92,10 +97,23 @@ function init() {
   var loader = new THREE.JSONLoader();
   loader.load(
     // resource URL
-    "../../3d/vrbaby2.json",
+    "../../3d/vrbaby3.json",
     // Function when resource is loaded
     createScene1
   );
+
+  loader.load(
+    // resource URL
+    "../../3d/baby_bottle.json",
+    // Function when resource is loaded
+    createScene2
+  );
+
+   // Flies
+  var sphere = new THREE.SphereGeometry( 2, 4, 4 );
+  light1 = new THREE.PointLight( 0x222222, 2, 50 );
+  light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0x222222 } ) ) );
+  scene.add( light1 );
 
   // Event Listeners.
   window.addEventListener( 'resize', onWindowResize, false );
@@ -132,7 +150,27 @@ function createScene1( geometry, materials ) {
   scene.add( mesh );
 }
 
+// Add model of baby bottle.
+function createScene2( geometry, materials ) {
+  mesh = new THREE.Mesh( geometry, new THREE.MultiMaterial( materials ));
+  mesh.position.set( 200, -150, 10 );
+  mesh.scale.x = mesh.scale.y = mesh.scale.z = 20;
+  mesh.castShadow = true;
+  mesh.receiveShadow = true;
+
+  scene.add( mesh );
+}
+
 function animate() {
+
+  var time = Date.now() * 0.003;
+
+  light1.position.x = 200 + Math.sin( time * 0.7 ) * 30 + osc*Math.random();
+  light1.position.y = Math.cos( time * 0.5 ) * 40 + osc*Math.random();
+  light1.position.z = Math.cos( time * 0.3 ) * 30;
+
+  osc = osc * -1;
+
   requestAnimationFrame( animate );
   controls.update(); // required if controls.enableDamping = true, or if controls.autoRotate = true
   render();
