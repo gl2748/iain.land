@@ -1,3 +1,6 @@
+# Personal website.
+Roots static site.
+
 # roots-base
 
 Clean Roots Install
